@@ -68,4 +68,7 @@ return require('packer').startup(function(use)
 
     -- todo-comments: Sirve para ver mejor los cometnarios TODO,FIX,BUG,etc
     use {"folke/todo-comments.nvim",requires = "nvim-lua/plenary.nvim",}
+
+    -- trouble: Sirve como ventana de logs
+    use {"folke/trouble.nvim",requires = "nvim-tree/nvim-web-devicons",}
 end)
