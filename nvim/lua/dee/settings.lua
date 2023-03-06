@@ -29,7 +29,7 @@
     vim.opt.foldmethod = 'marker'
 
 -- colorear columna
-    vim.opt.colorcolumn = '80'
+    vim.opt.colorcolumn = '90'
 
 -- Dividir pantalla de forma horizontal
     vim.opt.splitright = true
@@ -61,25 +61,10 @@
     vim.opt.lazyredraw = true
 
 -- columnas maximas por linea, para que el texto baje a la sgt
-    vim.opt.synmaxcol = 240
+    vim.opt.synmaxcol = 0
 
 -- tasa de refresco (ms)
     vim.opt.updatetime = 150
 
--- github copilot configs
-    vim.g.copilot_no_tab_map = true
-    vim.api.nvim_set_keymap("i", "<C-J>", ':Copilot setup("<CR>")', {})
-    vim.g.copilot_filetypes = {
-        ["*"] = false,
-        ["javascript"] = true,
-        ["typescript"] = true,
-        ["lua"] = false,
-        ["rust"] = true,
-        ["c"] = true,
-        ["c#"] = true,
-        ["c++"] = true,
-        ["go"] = true,
-        ["python"] = true,
-        ["html"] = true,
-        ["css"] = true,
-    }
+-- Evitar que el texto salte de linea.
+    vim.wo.wrap = false
