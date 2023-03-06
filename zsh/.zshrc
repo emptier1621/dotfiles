@@ -58,6 +58,7 @@ alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
+alias vim='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -68,7 +69,7 @@ source /usr/share/zsh-sudo/sudo.plugin.zsh
 
 # Functions
 function mkt(){
-    mkdir {css,js,src}
+	mkdir {css,js,src}
 }
 
 # Set 'man' colors
@@ -86,28 +87,30 @@ function man() {
 
 # fzf improvement
 function fzf-lovely(){
-    if [ "$1" = "h" ]; then
-        fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
-                    echo {} is a binary file ||
-                     (bat --style=numbers --color=always {} ||
-                      highlight -O ansi -l {} ||
-                      coderay {} ||
-                      rougify {} ||
-                      cat {}) 2> /dev/null | head -500'
-    else
-        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
-                        echo {} is a binary file ||
-                        (bat --style=numbers --color=always {} ||
-                        highlight -O ansi -l {} ||
-                        coderay {} ||
-                        rougify {} ||
-                        cat {}) 2> /dev/null | head -500'
-    fi
+
+	if [ "$1" = "h" ]; then
+		fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
+ 	                echo {} is a binary file ||
+	                 (bat --style=numbers --color=always {} ||
+	                  highlight -O ansi -l {} ||
+	                  coderay {} ||
+	                  rougify {} ||
+	                  cat {}) 2> /dev/null | head -500'
+
+	else
+	        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
+	                         echo {} is a binary file ||
+	                         (bat --style=numbers --color=always {} ||
+	                          highlight -O ansi -l {} ||
+	                          coderay {} ||
+	                          rougify {} ||
+	                          cat {}) 2> /dev/null | head -500'
+	fi
 }
 
 function rmk(){
-    scrub -p dod $1
-    shred -zun 10 -v $1
+	scrub -p dod $1
+	shred -zun 10 -v $1
 }
 
 # Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
