@@ -1,3 +1,5 @@
+<!-- TODO: Link simbolico a las carpetas de las herramientas -->
+
 # DOTFILES
 
 
@@ -25,6 +27,7 @@ Copy the "kitty" folder into the ".config" folder.
 * Install Node.
 * Install NeoVIM.
 * Copy the "nvim" folder into the ".config" folder.
+<!-- FIX: Image salto de linea --> 
 ![NeoVIM Tree]
     * lua: This folder contains the configuration profile.
     * lua/dee: This folder contains the configuration.
@@ -36,7 +39,7 @@ Copy the "kitty" folder into the ".config" folder.
     * spell: In this folder are the [files] needed for spell checking.
         * To use a language, use `set spell spelllang=en`.
         * To enable spell checking use `set spell` and `set nospell` to disable it.
-    
+<!-- TODO: init general, carpeta after, plugs -->
 
 [NeoVIM Tree]: ./images/nvim_tree.png
 [files]: 
